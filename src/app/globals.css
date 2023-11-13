@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.top-anime-list img {
+  width: 100%;
+  height: auto;
+}
+
+.top-anime-list {
+  transition: 1s;
+}
+
+.top-anime-list:hover {
+  transform: scale(1.1);
+}
