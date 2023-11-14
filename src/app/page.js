@@ -1,4 +1,5 @@
 import AnimeListCard from "@/app/components/AnimeListCard";
+import Navbar from "@/app/components/Navbar";
 
 const Home = async () => {
     const res = await fetch(
@@ -8,17 +9,25 @@ const Home = async () => {
 
     return (
         <>
-            <div>Popular Anime</div>
-
-            <div className="grid md:grid-cols-3 lg:grid-cols-5 grid-cols-2 gap-4">
-                {topAnimeList.data.map((data) => (
-                    <div key={data.mal_id} className="shadow-xl p-4">
-                        <AnimeListCard
-                            title={data.title}
-                            images={data.images.webp.image_url}
-                        />
+            <div className="home-container">
+                <header className="navbar-container shadow-2xl p-3">
+                    <div className="navbar-wrapper">
+                        <Navbar />
                     </div>
-                ))}
+                </header>
+                <div>Popular Anime</div>
+
+                <div className="grid md:grid-cols-3 lg:grid-cols-5 grid-cols-2 gap-4">
+                    {topAnimeList.data.map((data) => (
+                        <div key={data.mal_id} className="shadow-xl p-4">
+                            <AnimeListCard
+                                title={data.title}
+                                images={data.images.webp.image_url}
+                                rate={data.score}
+                            />
+                        </div>
+                    ))}
+                </div>
             </div>
         </>
     );
