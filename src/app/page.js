@@ -1,34 +1,19 @@
-import AnimeListCard from "@/app/components/AnimeListCard";
-import Navbar from "@/app/components/Navbar";
+import AnimeListCard from "@/components/AnimeListCard";
+import AnimeListTitle from "@/components/AnimeListCard/AnimeListTile";
 
 const Home = async () => {
+    // Fetching API (top anime) (API diambil dari environment)
     const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_BASE_URL}/top/anime`
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/top/anime?limit=10`
     );
     const topAnimeList = await res.json();
 
     return (
         <>
-            <div className="home-container">
-                <header className="navbar-container shadow-2xl p-3">
-                    <div className="navbar-wrapper">
-                        <Navbar />
-                    </div>
-                </header>
-                <div>Popular Anime</div>
-
-                <div className="grid md:grid-cols-3 lg:grid-cols-5 grid-cols-2 gap-4">
-                    {topAnimeList.data.map((data) => (
-                        <div key={data.mal_id} className="shadow-xl p-4">
-                            <AnimeListCard
-                                title={data.title}
-                                images={data.images.webp.image_url}
-                                rate={data.score}
-                            />
-                        </div>
-                    ))}
-                </div>
-            </div>
+            <section className="home-container">
+                <AnimeListTitle title="Popular" titleSpan="Anime" linkHref="/popular" linkText="See More" />
+                <AnimeListCard api={topAnimeList} />
+            </section>
         </>
     );
 };
