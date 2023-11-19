@@ -11,8 +11,13 @@ const Home = async () => {
     return (
         <>
             <section className="home-container">
-                <AnimeListTitle title="Popular" titleSpan="Anime" linkHref="/popular" linkText="See More" />
-                <AnimeListCard api={topAnimeList} />
+                <div className="">
+                    <AnimeListTitle title="Popular " titleSpan="Anime" linkHref="/popular" linkText="See More" />
+                    <AnimeListCard api={topAnimeList} />
+                </div>
+                <div>
+
+                </div>
             </section>
         </>
     );
