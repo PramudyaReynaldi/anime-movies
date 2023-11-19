@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import InputSearch from "@/components/InputSearch";
 import debounce from "lodash/debounce";
+import Link from "next/link";
 
 const Navbar = () => {
     const [searchQuery, setSearchQuery] = useState("");
@@ -30,9 +31,9 @@ const Navbar = () => {
     return (
         <header className="bg-white">
             <div className="flex md:flex-row lg:flex-row flex-col justify-between items-center p-5 shadow-xl">
-                <h2 className="text-3xl font-bold text-black">
+                <Link href="/" className="text-3xl font-bold text-black">
                     Anime<span className="text-red-500">Movie</span>
-                </h2>
+                </Link>
                 <InputSearch
                     value={searchQuery}
                     onChange={handleChange}

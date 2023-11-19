@@ -6,7 +6,7 @@ const AnimeListCard = ({ api }) => {
         <div className="top-anime-list text-xl">
             <div className="top-anime-header">
                 <div className="grid md:grid-cols-3 lg:grid-cols-5 grid-cols-2 gap-5 p-5">
-                    {api.data.map((anime) => (
+                    {api && api.data && api.data.map((anime) => (
                         <div className="top-anime-hover shadow-xl" key={anime.mal_id}>
                             <Link href={`/${anime.mal_id}`}>
                                 <Image
