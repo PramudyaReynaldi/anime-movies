@@ -13,20 +13,20 @@ const Page = async ({ params }) => {
     const searchAnime = await res.json();
     const decodedKeyword = decodeURIComponent(keyword); // Memastikan nilai 'keyword' di decode sebelum digunakan dalam URL
 
-    if(decodedKeyword === "") {
+    if(!searchAnime.data) {
         return (
             <section className="home-container">
                 <AnimeListTitle title="Anime Tidak Ditemukan" linkHref="/popular" linkText="See More" />
             </section>
         );
+    } else {
+        return (
+            <section className="home-container">
+                <AnimeListTitle title={`Pencarian dari anime ${decodedKeyword} ...`} linkHref="/popular" linkText="See More" />
+                <AnimeListCard api={searchAnime} />
+            </section>
+        );
     }
-
-    return (
-        <section className="home-container">
-            <AnimeListTitle title={`Pencarian dari anime ${decodedKeyword} ...`} linkHref="/popular" linkText="See More" />
-            <AnimeListCard api={searchAnime} />
-        </section>
-    );
 };
 
 export default Page;
