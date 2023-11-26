@@ -29,10 +29,10 @@ const Navbar = () => {
     };
    
     return (
-        <header className="bg-white">
+        <header className="bg-secondary-bg">
             <div className="flex md:flex-row lg:flex-row flex-col justify-between items-center p-5 shadow-xl">
-                <Link href="/" className="text-3xl font-bold text-black">
-                    Anime<span className="text-red-500">Movie</span>
+                <Link href="/" className="text-3xl font-bold text-primary-color">
+                    Anime<span className="text-secondary-color">Movie</span>
                 </Link>
                 <InputSearch
                     value={searchQuery}

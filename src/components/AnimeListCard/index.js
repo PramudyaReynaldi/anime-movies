@@ -16,10 +16,10 @@ const AnimeListCard = ({ api }) => {
                                     alt={anime.title}
                                 />
                                 <div className="p-4">
-                                    <h3 className="font-bold md:text-md text-sm break-words">
+                                    <h3 className="font-bold md:text-md text-sm break-words text-primary-color">
                                         {anime.title}
                                     </h3>
-                                    <p className="text-sm">Rate: {anime.score}</p>
+                                    <p className="text-sm text-primary-color">Rate: {anime.score}</p>
                                 </div>
                             </Link>
                         </div>
