@@ -16,10 +16,9 @@ const Navbar = () => {
 
     const handleSearch = (query) => {
         const keyword = query.trim(); // Remove leading and trailing whitespaces
-        const destination =
-            keyword === "" ? "/" : `/search/${encodeURIComponent(keyword)}`;
+        const destination = keyword === "" ? "/" : `/search/${encodeURIComponent(keyword)}`;
 
-        if (keyword !== "") return router.push(destination);
+        router.push(destination);
     };
 
     const handleChange = (e) => {
@@ -30,16 +29,18 @@ const Navbar = () => {
    
     return (
         <header className="bg-secondary-bg">
-            <div className="flex md:flex-row lg:flex-row flex-col justify-between items-center p-5 shadow-xl">
-                <Link href="/" className="text-3xl font-bold text-primary-color">
-                    Anime<span className="text-secondary-color">Movie</span>
-                </Link>
-                <InputSearch
-                    value={searchQuery}
-                    onChange={handleChange}
-                    placeholder="Search..."
-                    onClick={() => debouncedSearch(searchQuery)}
-                />
+            <div className="container">
+                <div className="flex md:flex-row lg:flex-row flex-col justify-between items-center p-5 shadow-xl">
+                    <Link href="/" className="text-3xl font-bold text-primary-color">
+                        Anime<span className="text-secondary-color">Movie</span>
+                    </Link>
+                    <InputSearch
+                        value={searchQuery}
+                        onChange={handleChange}
+                        placeholder="Search..."
+                        onClick={() => debouncedSearch(searchQuery)}
+                    />
+                </div>
             </div>
         </header>
     );
