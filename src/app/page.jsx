@@ -1,5 +1,6 @@
 import AnimeListCard from "@/components/AnimeListCard";
 import AnimeListTitle from "@/components/AnimeListCard/AnimeListTile";
+import Slider from "@/components/Slider";
 
 const Home = async () => {
     // Fetching API (top anime) (API diambil dari environment)
@@ -11,6 +12,7 @@ const Home = async () => {
     return (
         <>
             <section className="home-container">
+                <Slider />
                 <AnimeListTitle title="POPULAR " titleSpan="ANIME" linkHref="/popular" linkText="See More" />
                 <AnimeListCard api={topAnimeList} />
             </section>
