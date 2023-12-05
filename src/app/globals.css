@@ -90,6 +90,7 @@ body {
 
 .anime-title h5 {
   position: relative;
+  white-space: nowrap;
 }
 
 .anime-title h5::after {
@@ -125,5 +126,11 @@ body {
 @media (max-width: 768px) {
   .top-anime-list img {
     height: 250px;
+  }
+}
+
+@media (max-width: 320px) {
+  .anime-title h5 {
+   font-size: 20px;
   }
 }

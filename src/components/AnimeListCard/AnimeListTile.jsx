@@ -6,7 +6,7 @@ const oswald = Oswald({ subsets: ["latin"] });
 const AnimeListTitle = ({ title, titleSpan, linkHref, linkText }) => {
     return (
         <div className="container">
-            <div className="flex justify-between items-center p-6 pb-0">
+            <div className="flex justify-between items-center p-6 pb-0 md:flex-row lg:flex-row flex-col">
                 <div className="text-text-title font-extrabold text-primary-color anime-title ps-2">
                     <h5 className={oswald.className}><span className="text-secondary-color">{title}</span>{titleSpan}</h5>
                 </div>

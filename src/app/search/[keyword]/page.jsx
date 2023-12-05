@@ -22,7 +22,7 @@ const Page = async ({ params }) => {
     } else {
         return (
             <section className="home-container">
-                <AnimeListTitle title={`Pencarian dari anime ${decodedKeyword} ...`} linkHref="/popular" linkText="See More" />
+                <AnimeListTitle title={`Pencarian dari anime `} titleSpan={`${decodedKeyword} ...`} linkHref="/popular" linkText="See More" />
                 <AnimeListCard api={searchAnime} />
             </section>
         );

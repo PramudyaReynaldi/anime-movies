@@ -8,7 +8,7 @@ const AnimeListCard = ({ api }) => {
                 <div className="top-anime-header">
                     <div className="grid md:grid-cols-3 lg:grid-cols-5 grid-cols-2 gap-5 p-5">
                         {api && api.data && api.data.map((anime) => (
-                            <div className="top-anime-hover shadow-xl" key={anime.mal_id}>
+                            <div className="top-anime-hover shadow-2xl" key={anime.mal_id}>
                                 <Link href={`/${anime.mal_id}`} className="text-primary-color hover:text-secondary-color transition-all">
                                     <Image
                                         src={anime.images.webp.image_url}
